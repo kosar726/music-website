@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2020 at 12:11 AM
+-- Generation Time: Jul 06, 2020 at 12:19 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -36,14 +36,6 @@ CREATE TABLE `comments` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='post_id will be the id of the post/music item';
 
---
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `name`, `body`, `email`, `post_id`) VALUES
-(3, 'Hasan Parasteh', 'asdasd', 'test@example.com', 14),
-(4, 'shahingashtlorestan.ir', 'asdasd', 'test@example.com', 14);
-
 -- --------------------------------------------------------
 
 --
@@ -60,13 +52,6 @@ CREATE TABLE `posts` (
   `author` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `name`, `artist`, `lyric`, `link`, `image`, `author`, `date`) VALUES
-(14, 'بهت قول میدم', 'محسن یگانه', 'خودت میخوای بری،خاطره شی\r\n\r\nاما دلت میسوزه،تظاهر میکنی،عاشقمی\r\n\r\nاین بازی هر روزه نترس\r\n\r\nآدم دم رفتن همش دلشوره میگیره\r\n\r\nدوروز بگذره این دلشوره ها از خاطرت میده\r\n\r\n \r\n\r\nبهت قول میدم سخت نیست لااقل برا تو راحت باش\r\n\r\nدورم از تو و دنیای تو راحت باش\r\n\r\nهیشکس نمیاد جای تو\r\n\r\nدلشوره دارم من واسه فردای تو\r\n\r\n \r\n\r\nبهت قول میدم سخت نیس لااقل برای تو\r\n\r\nراحت باش\r\n\r\nدور از تو و دنیای تو راحت باش\r\n\r\nهیشکس نمیاد جای تو\r\n\r\nدلشوره دارم من واسه فردای تو\r\n\r\n \r\n\r\nاز عشق هر چیزی که میشناسمو از من گرفتی تو\r\n\r\nتو باقی مونده احساسمو از من گرفتیو\r\n\r\nمیخوای من باشی و یادت بره مایی وجود داره\r\n\r\nخود آماده رفتنیو ترست نمیزاره\r\n\r\nاصلا نترس راحت برو بی من\r\n\r\nهیشکی به جز تو من و یادش نیست\r\n\r\nفکر کردی کی از من خبر داره\r\n\r\nراحت برو هیشکی حواسش نیست\r\n\r\n \r\n\r\nبهت قول میدم سخت نیست لااقل برا تو راحت باش\r\n\r\nدورم از تو و دنیای تو راحت باش\r\n\r\nهیشکس نمیاد جای تو\r\n\r\nدلشوره دارم من واسه فردای تو\r\n\r\n \r\n\r\nهت قول میدم سخت نیس لااقل برای تو\r\n\r\nراحت باش\r\n\r\nدور از تو و دنیای تو راحت باش\r\n\r\nهیشکس نمیاد جای تو\r\n\r\nدلشوره دارم من واسه فردای تو\r\n\r\n \r\n\r\nمسیرمون با هم یکی بود ولی مقصد جدا\r\n\r\nدلگیرم وو پر بغضم خدایا …', 'uploads/musics/نامعلوم/Mohsen Yeganeh - Behet Ghol Midam (128).mp3', 'uploads/covers/photo_2017-08-30_19-39-52.jpg', 'حسن پرسته', '2020-07-05 23:51:01');
 
 --
 -- Indexes for dumped tables
