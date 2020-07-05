@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Directa";
+  /* IE9 Compat Modes */
+  src:
+    url("../fonts/Directa\ Serif.woff") format("woff"),
+  /* Safari, Android, iOS */
+}
+body {
+  
+  text-align: left !important;
+  font-family: "Directa" !important; 
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: black;
+  /* background: linear-gradient(rgba(0,0,0,.07),rgba(0,0,0,.9)), url('../img/bg-sidebar.jpg') no-repeat center center/cover;
+}*/
+}
+.color-nav{
+  background-color: black;
+}
+
+.color-search{
+  color:black !important;
+}
+.border-bottom{
+  border-bottom : 2px solid #eee;
+}
+.border-top{
+  border-top : 1px solid yellow !important;
+  padding: 5px;
+}
+.sidebar-link{
+  transition: all 0.4s;
+  color: yellow !important;
+}
+
+.sidebar-link:hover{
+  background: #444;
+  border-radius : 5px;
+  background-color: yellow;
+  color: black !important;
+  
+}
+a.current{
+  background: yellow;
+  color: black !important;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+a.current:hover{
+  background: yellow;
+  border-radius: 7px;
+  transform: translateY(-3px);
+}
+
+.search-input{
+  background: transparent;
+  border : none;
+  border-radius: 0;
+  border-bottom: 2px solid #444;
+  transition: all 0.5s;
+  text-align: left !important;
+  color: white !important;
+}
+
+.search-form{
+  display: flex;
+  justify-content: center !important;
+}
+
+.search-input:focus{
+  background: transparent;
+  box-shadow: none;
+  border-bottom: 2px solid yellow;
+}
+
+.search-button{
+  border-radius: 50%;
+  transition: all 0.4s;
+  background-color: yellow;
+}
+.search-button:hover{
+  transform: translateY(-3px);
+}
+
+@media (max-width:765px){
+  .sidebar{
+    position: static;
+    height: auto;
+  }
+  .top-navbar{
+    position: static;
+  }
+}
+
+
+
+
+.page-item:last-child .page-link{
+  border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.page-item:first-child .page-link{
+  border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+.section{
+  background-color: black;
+}
+
+.Music{
+  background-color: black;
+}
+
+.background-black{
+  background-color: black !important;
+  color: yellow !important;
+}
+.black{
+  color: black;
+}
+.black:hover{
+  color: black;
+}
+
+.footer{
+  background-color: black;
+  border-top: 1px solid blanchedalmond;
+}
+
+.logo{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.bttn{
+  width: 400px;
+  background-color: yellow;
+  color: black;
+}
