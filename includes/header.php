@@ -30,8 +30,8 @@
                 <li class="nav-item"><a href="category.php" class="nav-link">دسته بندی ها</a></li>
                 <li class="nav-item"><a href="upload.php" class="nav-link">پخش آهنگ های شما</a></li>
             </ul>
-            <form action="search.php" class="form-inline ml-md-5 ml-lg-5 my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="جستجو..." aria-label="Search">
+            <form method="GET" action="search.php" class="form-inline ml-md-5 ml-lg-5 my-2 my-lg-0">
+                <input type="text" name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="جستجو..." aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>

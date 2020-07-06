@@ -48,4 +48,11 @@ class Query extends Connection
         $get->execute();
         return $get;
     }
+
+    public function like($table, $item, $value){
+        $query = "SELECT * FROM $table WHERE $item LIKE '%$value%'";
+        $get = $this->connect()->prepare($query);
+        $get->execute();
+        return $get;
+    }
 }
