@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 01, 2020 at 09:05 PM
--- Server version: 8.0.20-0ubuntu0.20.04.1
--- PHP Version: 7.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Jul 06, 2020 at 11:21 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,29 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artist`
---
-
-CREATE TABLE `artist` (
-  `id` int NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `albums` longtext NOT NULL,
-  `musics` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `body` text NOT NULL,
   `email` varchar(255) NOT NULL,
-  `post_id` int NOT NULL
+  `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='post_id will be the id of the post/music item';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genre`
+--
+
+CREATE TABLE `genre` (
+  `id` int(11) NOT NULL,
+  `genre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -56,11 +54,15 @@ CREATE TABLE `comments` (
 --
 
 CREATE TABLE `posts` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `lyrics` text NOT NULL,
-  `dl_link` varchar(530) NOT NULL,
-  `artist_id` int NOT NULL
+  `artist` varchar(255) NOT NULL,
+  `genre` varchar(255) NOT NULL,
+  `lyric` longtext NOT NULL,
+  `link` longtext NOT NULL,
+  `image` longtext NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -68,15 +70,15 @@ CREATE TABLE `posts` (
 --
 
 --
--- Indexes for table `artist`
---
-ALTER TABLE `artist`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `genre`
+--
+ALTER TABLE `genre`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -90,22 +92,22 @@ ALTER TABLE `posts`
 --
 
 --
--- AUTO_INCREMENT for table `artist`
---
-ALTER TABLE `artist`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `genre`
+--
+ALTER TABLE `genre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

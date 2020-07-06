@@ -1,21 +1,20 @@
 <?php
-$title = "صفحه ی اصلی";
+$title = "جستجو";
 require("./includes/header.php");
 ?>
 
 <div class="container">
     <div class="row">
-        <main class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <main class="col-xs-12 col sm-12 col-md-9 col-lg-9">
             <div class="bg-white shadow p-5 my-5 rounded">
-                <h3 class="h4 text-right border-bottom pb-2">آخرین موزیک ها</h3>
                 <div class="row">
-                    <?php
-                        // Get all songs from db
+                <?php 
+                    if(!empty($_GET["search"])){
                         require_once("./includes/db.php");
                         $query = new Query();
-                        $data = $query->get("posts");
-                        foreach( $data->fetchAll() as $result){
-                            echo "<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>";
+                        if($data = $query->like("posts", "name", $_GET["search"])){
+                            foreach($data->fetchAll() as $result){
+                                echo "<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>";
                                 echo "<div class='card' style='width:100%;'>";
                                     echo "<img src='".$result["image"]."' alt='کاور' height='350px'/>";
                                     echo "<div class='card-block text-center'>";
@@ -28,14 +27,20 @@ require("./includes/header.php");
                                     echo "</div>";
                                 echo "</div>";
                             echo "</div>";
+                            }
+                        }else{
+                            echo "<h3 class='text-center'>کلیدواژه مورد نظر شما یافت نشد....</h3>";
                         }
-                    ?>
+                    }else{
+                        echo "<h3 class='text-center'>چیزی جستجو نکردید...</h3>";
+                    }
+                ?>
                 </div>
             </div>
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
             <div class="bg-white shadow p-3 my-5 rounded">
-                <?php require("./includes/sidebar.php"); ?>
+                <?php include("./includes/sidebar.php"); ?>
             </div>
         </aside>
     </div>
