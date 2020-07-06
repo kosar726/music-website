@@ -27,8 +27,9 @@ require("./includes/header.php");
             <?php
             $name = $email = $comment = "";
             $nameErr = $emailErr = $commentErr = "";
-
+            
             require_once("./functions.php");
+            require_once("./includes/db.php");
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (!empty($_POST["name"])) {
