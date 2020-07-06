@@ -9,7 +9,7 @@ require("./includes/header.php");
             <div class="bg-white shadow p-5 my-5 rounded">
                 <?php
                 if (isset($_GET["post_id"])) {
-                    require("./includes/db.php");
+                    require_once("./includes/db.php");
                     $query = new Query();
                     $data = $query->where("posts", "id", $_GET["post_id"]);
                     foreach ($data->fetchAll() as $result) {
@@ -28,7 +28,7 @@ require("./includes/header.php");
             $name = $email = $comment = "";
             $nameErr = $emailErr = $commentErr = "";
 
-            require("./functions.php");
+            require_once("./functions.php");
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (!empty($_POST["name"])) {
@@ -88,6 +88,7 @@ require("./includes/header.php");
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <?php
+                            require_once("./includes/db.php");
                             $sc = new Query();
                             $data = $sc->where("comments", "post_id", $_GET["post_id"]);
                             foreach($data->fetchAll() as $result){
@@ -110,7 +111,7 @@ require("./includes/header.php");
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
             <div class="bg-white shadow p-3 my-5 rounded">
-                <?php include("./includes/sidebar.php"); ?>
+                <?php require("./includes/sidebar.php"); ?>
             </div>
         </aside>
     </div>

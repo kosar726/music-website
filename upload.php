@@ -1,8 +1,9 @@
 <?php
 $title = "آپلود موزیک";
 require("./includes/header.php");
-require("functions.php");
-require("./includes/db.php");
+
+require_once("functions.php");
+require_once("./includes/db.php");
 
 $name = $artist = $author = $img = $music = $genre = $lyrics = "";
 $nameErr = $artistErr = $authorErr = $imgErr = $genreErr = $musicErr = $lyricsErr = "";
@@ -17,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $artist = test_input($_POST["artist"]);
     } else {
         $artistErr = "وارد کردن نام خواننده الزامی است!";
+    }
+    if(!empty($_POST["genre"])){
+        $genre = test_input($_POST["genre"]);
+    }else{
+        $genreErr = "وارد کردن یک ژانر الزامی است!";
     }
     if (!empty($_POST["author"])) {
         $author = test_input($_POST["author"]);
@@ -64,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $arr = array(
             "name"=> $name,
             "artist"=>$artist,
+            "genre"=>$genre,
             "lyric"=>$lyrics,
             "link"=>$music,
             "image"=>$image,
@@ -101,7 +108,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <select name="genre" id="genre" class="custom-select">
                                     <option value="نامعلوم" selected>نامعلوم</option>
                                     <?php
-                                    // foreach genre list
+                                        // foreach genre list
+                                        require_once("./includes/db.php");
+
+                                        $option = new Query();
+                                        $values = $option->get('genre');
+
+                                        foreach($values->fetchAll() as $result){
+                                            echo "<option value='".$result['genre']."'>".$result['genre']."</option>";
+                                        }
                                     ?>
                                 </select>
                                 <small class="text-danger"><?php $genreErr; ?></small>
@@ -137,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
             <div class="bg-white shadow p-3 my-5 rounded">
-                <?php include("./includes/sidebar.php"); ?>
+                <?php require("./includes/sidebar.php"); ?>
             </div>
         </aside>
     </div>

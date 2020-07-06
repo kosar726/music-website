@@ -15,7 +15,7 @@ require("./includes/header.php");
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
             <div class="bg-white shadow p-3 my-5 rounded">
-                <?php include("./includes/sidebar.php"); ?>
+                <?php require("./includes/sidebar.php"); ?>
             </div>
         </aside>
     </div>

@@ -11,7 +11,7 @@ require("./includes/header.php");
                 <div class="row">
                     <?php
                         // Get all songs from db
-                        require("./includes/db.php");
+                        require_once("./includes/db.php");
                         $query = new Query();
                         $data = $query->get("posts");
                         foreach( $data->fetchAll() as $result){
@@ -21,6 +21,7 @@ require("./includes/header.php");
                                     echo "<div class='card-block text-center'>";
                                         echo "<a class='mt-3 d-flex justify-content-center' href='music.php?music=".$result["name"]."'><i class='fas fa-music ml-2'></i><h5 class=''>".$result["name"]."</h5></a>";
                                         echo "<p class='text-center'><i class='fas fa-user ml-2'></i>".$result["artist"]."<br/>";
+                                        echo "<i class='fas fa-file ml-2'></i>".$result["genre"]."<br/>";
                                         echo "<i class='fas fa-clock ml-2'></i>".$result['date'];
                                         echo "</p>";
                                         echo "<a href='music.php?music=".$result["name"]."&post_id=".$result["id"]."' class='btn btn-primary mb-3'>دانلود</a>";
@@ -34,7 +35,7 @@ require("./includes/header.php");
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
             <div class="bg-white shadow p-3 my-5 rounded">
-                <?php include("./includes/sidebar.php"); ?>
+                <?php require("./includes/sidebar.php"); ?>
             </div>
         </aside>
     </div>
