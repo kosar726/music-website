@@ -3,23 +3,27 @@ $title = "Eminem | Musics to be murderd by";
 require("./includes/header.php");
 ?>
 
-<div class="container">
+<div class="container Music">
     <div class="row">
         <main class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-            <div class="bg-white shadow p-5 my-5 rounded">
+            <div class=" Music shadow p-5 my-5 rounded">
                 <?php
                 if (isset($_GET["post_id"])) {
                     require_once("./includes/db.php");
                     $query = new Query();
                     $data = $query->where("posts", "id", $_GET["post_id"]);
                     foreach ($data->fetchAll() as $result) {
-                        echo "<h1 class='text-center'>" . $result['name'] . "</h1>";
-                        echo "<img class='d-block mx-auto' src='" . $result['image'] . "' />";
+                        echo "<h1 class='text-center'>" . $result['name'] . ' - ' . $result['artist'] . "</h1>";
+                        echo "<img class='img-fluid d-block mx-auto' src='" . $result['image'] . "' />";
                         if (!empty($result['lyric'])) {
                             echo "<h3 class='text-center mt-5'>متن آهنگ</h3>";
                             echo "<p class='p-2 text-center'>" . $result['lyric'] . "</p>";
                         }
-                        echo "<a class='btn btn-primary text-light btn-large w-100' href='" . $result['link'] . "'>لینک دانلود</a>";
+                       echo "<audio controls class='text-center  w-100' >;
+                      <source  src='" . $result['link'] . "'>;
+                       Your browser does not support the audio element;
+                      </audio>";
+                        echo "<a class='btn sidebar-link current btn-large w-100' href='" . $result['link'] . "' download>لینک دانلود</a>";
                     }
                 }
                 ?>
@@ -66,7 +70,7 @@ require("./includes/header.php");
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                        <label for="name">نام و نام خانوادگی</label>
+                                        <label for="name white">نام و نام خانوادگی</label>
                                         <input type="text" name="name" id="name" class="form-control">
                                         <small class="text-danger"><?php echo $nameErr; ?></small>
                                     </div>
@@ -86,24 +90,24 @@ require("./includes/header.php");
                         </form>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row black">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
                         <?php
                             require_once("./includes/db.php");
                             $sc = new Query();
                             $data = $sc->where("comments", "post_id", $_GET["post_id"]);
                             foreach($data->fetchAll() as $result){
+                                if($result["status"] == 1){
                                 echo "<div class='comment'>";
-                                    echo "<h4>";
+                                    echo "<p>";
                                     echo "نام: ".$result['name']."";
-                                    echo "</h4>";
-                                    echo "<h5>";
-                                    echo "ایمیل: ".$result['email']."";
-                                    echo "</h5>";
+                                    echo "</p>";
                                     echo "<p>";
                                     echo "دیدگاه: ".$result["body"]."";
                                     echo "</p>";
                                 echo "</div>";
+                                }
                             }
                         ?>
                     </div>
@@ -111,7 +115,7 @@ require("./includes/header.php");
             </div>
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
-            <div class="bg-white shadow p-3 my-5 rounded">
+            <div class="Music shadow p-3 my-5 rounded">
                 <?php require("./includes/sidebar.php"); ?>
             </div>
         </aside>

@@ -6,6 +6,12 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <h5 class="h5 text-right border-bottom pb-2 text-light">راه های ارتباطی</h5>
+                    <div class="d-flex align-items-center">
+                       <a href="#"><i class="fab fa-instagram text-muted fa-3x"></i> </a>
+                       <a href="#"><i class="fab fa-twitter text-muted px-2 fa-4x"></i></a>
+                       <a href="#"><i class="fab fa-pinterest text-muted fa-3x"></i></a>
+                       <a href="#"><i class="fab fa-facebook text-muted px-2 fa-4x"></i></a>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <h5 class="h5 text-right border-bottom pb-2 text-light">نماد های اعتماد سازی</h5>

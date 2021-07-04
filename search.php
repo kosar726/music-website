@@ -18,12 +18,12 @@ require("./includes/header.php");
                                 echo "<div class='card' style='width:100%;'>";
                                     echo "<img src='".$result["image"]."' alt='کاور' height='350px'/>";
                                     echo "<div class='card-block text-center'>";
-                                        echo "<a class='mt-3 d-flex justify-content-center' href='music.php?music=".$result["name"]."'><i class='fas fa-music ml-2'></i><h5 class=''>".$result["name"]."</h5></a>";
+                                        echo "<a class='mt-3 d-flex justify-content-center black' href='music.php?music=".$result["name"]."&post_id=".$result["id"]."'><i class='fas fa-music ml-2'></i><h5 class=''>".$result["name"]."</h5></a>";
                                         echo "<p class='text-center'><i class='fas fa-user ml-2'></i>".$result["artist"]."<br/>";
                                         echo "<i class='fas fa-file ml-2'></i>".$result["genre"]."<br/>";
                                         echo "<i class='fas fa-clock ml-2'></i>".$result['date'];
                                         echo "</p>";
-                                        echo "<a href='music.php?music=".$result["name"]."&post_id=".$result["id"]."' class='btn btn-primary mb-3'>دانلود</a>";
+                                        echo "<a href='music.php?music=".$result["name"]."&post_id=".$result["id"]."' class='btn  Music mb-3 btn-large w-100'>دانلود</a>";
                                     echo "</div>";
                                 echo "</div>";
                             echo "</div>";
@@ -39,7 +39,7 @@ require("./includes/header.php");
             </div>
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
-            <div class="bg-white shadow p-3 my-5 rounded">
+            <div class="Music shadow p-3 my-5 rounded">
                 <?php include("./includes/sidebar.php"); ?>
             </div>
         </aside>

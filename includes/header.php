@@ -14,11 +14,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    < <nav class="navbar navbar-expand-lg bg-dark navbar-dark  background-black shadow-sm">
         <a class="navbar-brand" href="index.php">
-            <img class="d-block m-auto" src="./assets/img/logo.jpg" alt="لوگو" width="15%">
+            <img class="img-fluid" style="width: 100px; height: 100px;" src="./assets/img/logo6.png" alt="لوگو" width="15%">
+            <span class="text-white" style="font-size: 25px;">سون موزیک</span>
+            <img class="img-fluid" style="width: 100px; height: 100px;" src="./assets/img/logo6.png" alt="لوگو" width="15%">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mr-auto mb-2 background-black" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -30,9 +32,9 @@
                 <li class="nav-item"><a href="category.php" class="nav-link">دسته بندی ها</a></li>
                 <li class="nav-item"><a href="upload.php" class="nav-link">پخش آهنگ های شما</a></li>
             </ul>
-            <form method="GET" action="search.php" class="form-inline ml-md-5 ml-lg-5 my-2 my-lg-0">
+           <form method="GET" action="search.php" class="form-inline ml-md-5 ml-lg-5 my-2 my-lg-0">
                 <input type="text" name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="جستجو..." aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-outline-light my-2 my-sm-2 mr-2" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
     </nav>

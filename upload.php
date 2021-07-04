@@ -1,6 +1,6 @@
 <?php
 $title = "آپلود موزیک";
-require("./includes/header.php");
+require("./includes/header2.php");
 
 require_once("functions.php");
 require_once("./includes/db.php");
@@ -78,7 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "date"=> $date->format('Y-m-d H:i:s')
         );
         $query = new Query();
+
         $query->insert("posts", $arr);
+        
         echo "<script>alert('اطلاعات با موفقیت ذخیره شد');</script>";
     }
 }
@@ -144,14 +146,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label for="lyrics">متن موسیقی</label>
                                 <textarea name="lyrics" id="lyrics" cols="30" rows="10" class="form-control"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">ارسال</button>
+                            <button type="submit" class="btn Music w-100">ارسال</button>
                         </form>
                     </div>
                 </div>
             </div>
         </main>
         <aside class="col-xs-12 col sm-12 col-md-3 col-lg-3">
-            <div class="bg-white shadow p-3 my-5 rounded">
+            <div class="Music shadow p-3 my-5 rounded">
                 <?php require("./includes/sidebar.php"); ?>
             </div>
         </aside>

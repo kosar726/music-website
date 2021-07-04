@@ -7,6 +7,3 @@ First copy all the files and folder into `htdocs` and the open `localhost/phpmya
 After all of these steps your are good to go and create your first music post.
 
 **If you changed the user name or password of phpmyadmin from default you need to change username and password from `includes/db.php` file**
-
-### BUG
-if you want to create a Genre for music first create a folder named `uploads/music` and put Genre names exactly as it is in the database table otherwise you get error for inserting music into the db
